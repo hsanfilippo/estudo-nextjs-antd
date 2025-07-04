@@ -1,5 +1,12 @@
+import { Header } from "@/components/Header";
+
 export default function ListarContatos() {
   return (
-    <h1>Teste listagem</h1>
+    <>
+      <Header headerContent="Sua lista de contatos" />
+      <div className="container">
+        
+      </div>
+    </>
   )
 }
