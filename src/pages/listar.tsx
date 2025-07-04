@@ -1,3 +1,4 @@
+import { CardListagem } from "@/components/CardListagem";
 import { Header } from "@/components/Header";
 
 export default function ListarContatos() {
@@ -5,7 +6,7 @@ export default function ListarContatos() {
     <>
       <Header headerContent="Sua lista de contatos" />
       <div className="container">
-        
+        <CardListagem />
       </div>
     </>
   )
