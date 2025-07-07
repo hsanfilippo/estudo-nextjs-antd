@@ -1,0 +1,41 @@
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card {
+  background-color: #ccc;
+  margin-top: 40px;
+  width: 80%;
+  color: #0c0c0c;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.contatoContainer {
+  padding: 12px 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #000;
+}
+
+.contatoInfo {
+  display: flex;
+  width: 70%;
+}
+
+.infoText {
+  margin-right: 16px;
+}
+
+.categoria {
+  background: none;
+  padding: 4px 16px;
+  border-radius: 16px;
+  border: 2px solid #0c0c0c;
+  font-size: 12px;
+}

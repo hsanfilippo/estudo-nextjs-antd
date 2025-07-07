@@ -1,7 +1,14 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import styles from './styles.module.css'
 
+type Contato = {
+  Nome: string,
+  Telefone: string,
+  Categoria: string
+}
+
 export function CardListagem() {
+  const [contatos, setContatos] = useState<Contato[]>([])
   
   const getContatos = async () => {
     try {
@@ -15,6 +22,7 @@ export function CardListagem() {
       if (!res.ok) throw new Error("Erro ao buscar por contatos")
 
       const contatosData = await res.json()
+      setContatos(contatosData)
       console.log("Contatos:", contatosData)
 
     } catch (erro) {
@@ -27,17 +35,24 @@ export function CardListagem() {
   }, [])
 
   return (
-    <div className={styles.card}>
-      <div className={styles.cardTitle}>
-        <h3>Titulo do card</h3>
-        <div>
-          <p>Nome aqui</p>
-          <p>Tel aqui</p>
-        </div>
-        <div>
-          <p>Categoria aqui</p>
-        </div>
+    <>
+      <div className={styles.cardContainer}>
+          <div className={styles.card}>
+          {contatos.map((contato) => {
+            return (
+            <div className={styles.contatoContainer}  key={contato.Telefone}>
+              <div className={styles.contatoInfo}>
+                <p className={styles.infoText}>{contato.Nome}</p>
+                <p className={styles.infoText}>{contato.Telefone}</p>
+              </div>
+              <div>
+                <p className={styles.categoria}>{contato.Categoria}</p>
+              </div>
+            </div>
+            )  
+        })}
       </div>
-    </div>
+      </div>
+    </>
   )
 }

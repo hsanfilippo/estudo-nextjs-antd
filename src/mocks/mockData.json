@@ -8,5 +8,10 @@
     "Nome": "Naomi",
     "Telefone": "123456",
     "Categoria": "Comum"
+  },
+  {
+    "Nome": "Lorena",
+    "Telefone": "11213213",
+    "Categoria": "Favoritos"
   }
 ]
